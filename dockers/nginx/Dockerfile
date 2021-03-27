@@ -1,5 +1,6 @@
 FROM	alpine
-
+EXPOSE 80
+EXPOSE 443
 RUN apk update
 RUN apk add vim
 RUN apk add bash

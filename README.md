@@ -42,6 +42,46 @@ minikube delete //эта команда нужна если не стартуе�
 
 Установка заверешена. Теперь вы можете работать со своим кластером через CLI-инструмент kubectl.
 
+####Создание и управленипе PODs
+https://www.youtube.com/watch?v=kGwe8IEDiX4&t
+
+minikube start --vm-driver=virtualbox
+
+kubectl get nodes
+
+kubectl get pods
+
+kubectl run pod_name --generator=run-pod/v1 --image=docker_image_name --port=80  //ищет образ на докерхабе
+
+kubectl describe pods name_pod
+
+kubectl delete pods name_pod
+
+kubectl exec pod_name date //получить дату 
+
+kubectl exec -it pod_name sh //подключиться к консоли докер контейнера
+
+kubectl logs pod_name 
+
+kubectl port-forward pod_name my_port:pod_port
+kubectl port-forward hello 8080:80
+
+````
+apiVersion : v1
+kind: Pod
+metadata:
+name: my-web
+spec:
+containers:
+- name : container-apache
+image: nginx
+````
+
+eval $(minicube docker-env)
+
+kubectl apply -f file_name 
+  
+
 
 
 
