@@ -1,8 +1,9 @@
 apiVersion : v1
 kind: Pod
 metadata:
-  name: my-nginx
+  name: name-nginx-meta
 spec:
   containers:
-    - name : my-nginx
-      image: nginx
+    - name : name-nginx
+      image: my-nginx
+      imagePullPolicy: Never

@@ -77,7 +77,11 @@ containers:
 image: nginx
 ````
 
-eval $(minicube docker-env)
+sudo usermod -aG docker ${USER}
+
+su - ${USER}
+
+eval $(minikube docker-env)
 
 kubectl apply -f file_name 
   
