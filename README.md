@@ -84,6 +84,28 @@ su - ${USER}
 eval $(minikube docker-env)
 
 kubectl apply -f file_name 
+
+##### включаем metallb
+minikube addons enable metallb
+
+#####Посмотреть данные
+minikube dashboard
+
+
+## простой запуск деплоймента
+активируем metallb
+minikube addons enable metallb
+minikube addons disable metallb
+
+запускаем его конфиг
+kubectl apply -f configmap.yaml 
+
+Запускаем наш деплоймент
+kubectl apply -f deploy_myweb_v1.yaml
+
+docker inspect cont_name
+
+
   
 
 
