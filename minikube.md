@@ -1,6 +1,24 @@
+# Общие знания о minikube
+
+### Запуск на win 10 (Ubuntu)
+````
+sudo /etc/init.d/docker start
+minikube start
+minikube addons enable metallb
+kubectl apply -f configmap.yaml
+minikube dashboard
+sudo usermod -aG docker ${USER}
+su - ${USER}
+eval $(minikube docker-env)
+docker build -t my-nginx .
+kubectl apply -f file_name
+````
+### Основные команды minikube
+````
 minikube start
 minikube stop
 minikube delete
+````
 
 ## Hello Minikube
 
@@ -10,32 +28,34 @@ https://kubernetes.io/ru/docs/tutorials/hello-minikube/
 
 minikube dashboard
 
-####Создание Deployment
-######создание деплоймента для управления подом
-kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
-######Посмотреть информацию о Deployment:
-kubectl get deployments
-######Посмотреть информацию о поде:
-kubectl get pods
-######Посмотреть события кластера:
-kubectl get events
-######Посмотреть kubectl конфигурацию:
-kubectl config view
+### Создание Deployment
+#### создание деплоймента для управления подом
+`kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4`
+#### Посмотреть информацию о Deployment:
+`kubectl get deployments`
+#### Посмотреть информацию о поде:
+`kubectl get pods`
+#### Посмотреть события кластера:
+`kubectl get events`
+#### Посмотреть kubectl конфигурацию:
+`kubectl config view`
 
-######Сделать под доступным для публичной сети Интернет можно с помощью команды kubectl expose:
-kubectl expose deployment hello-node --type=LoadBalancer --port=8080
+###### Сделать под доступным для публичной сети Интернет можно с помощью команды kubectl expose:
+`kubectl expose deployment hello-node --type=LoadBalancer --port=8080`
 
 Флаг --type=LoadBalancer показывает, что сервис должен быть виден вне кластера.
 
-######Посмотреть только что созданный сервис:
-kubectl get services
+###### Посмотреть только что созданный сервис:
+`kubectl get services`
 
-######Откроется окно браузера, в котором запущено ваше приложение и будет отображено сообщение "Hello World".
-minikube service hello-node
+###### Откроется окно браузера, в котором запущено ваше приложение и будет отображено сообщение "Hello World".
+`minikube service hello-node`
 
-######Освобождение ресурсов
+###### Освобождение ресурсов
+````
 kubectl delete service hello-node
 kubectl delete deployment hello-node
 
 minikube stop
 minikube delete
+````

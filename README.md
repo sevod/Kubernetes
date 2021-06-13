@@ -1,5 +1,7 @@
 # Kubernetes
 
+Проект "Школы 21" Ft_services. Задание на проект находится в файле ft_services.en.subject.pdf. Проект для сдачи находится в папке ft_services. Все остальное использовалось для обучения. Для запуска проекта нужно запустить файл setup.sh. Предварительно должен быть установлен Kubernetes.
+
 Будем работать через миникуб.
 
 Minikube — это инструмент, позволяющий легко запускать Kubernetes на локальной машине. 
@@ -38,11 +40,11 @@ minikube status
 
 minikube stop
 
-minikube delete //эта команда нужна если не стартует,что бы очистить состояние
+minikube delete //эта команда нужна если не стартует, что бы очистить состояние
 
-Установка заверешена. Теперь вы можете работать со своим кластером через CLI-инструмент kubectl.
+Установка завершена. Теперь вы можете работать со своим кластером через CLI-инструмент kubectl.
 
-####Создание и управленипе PODs
+#### Создание и управленипе PODs
 https://www.youtube.com/watch?v=kGwe8IEDiX4&t
 
 minikube start --vm-driver=virtualbox
@@ -81,14 +83,14 @@ sudo usermod -aG docker ${USER}
 
 su - ${USER}
 
-eval $(minikube docker-env)
+eval $(minikube docker-env) //тут могут проблемы из за суда. помогут две команды выше.
 
 kubectl apply -f file_name 
 
 ##### включаем metallb
 minikube addons enable metallb
 
-#####Посмотреть данные
+##### Посмотреть данные
 minikube dashboard
 
 
@@ -104,6 +106,8 @@ kubectl apply -f configmap.yaml
 kubectl apply -f deploy_myweb_v1.yaml
 
 docker inspect cont_name
+
+### Запуск mini
 
 
   
