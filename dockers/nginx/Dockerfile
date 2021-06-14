@@ -1,7 +1,7 @@
 FROM	alpine:3.12
 RUN apk update
 RUN apk upgrade
-RUN apk add vim nginx openssl openssh supervisor
+RUN apk add vim bash nginx openssl openssh supervisor
 #RUN apk add bash
 #RUN apk add nginx
 #RUN apk add openssh
