@@ -14,7 +14,7 @@ ADD https://wordpress.org/wordpress-5.6.zip /
 RUN apt-get install -y vim
 RUN apt-get install -y procps
 
-COPY ./srcs/default /etc/nginx/sites-enabled/default
+COPY ./srcs/default /etc/nginx/conf.d/default.conf
 COPY ./srcs/start_script.sh start_script.sh
 COPY ./srcs/localhost.sql localhost.sql
 COPY ./srcs/ssl /etc/nginx/ssl

@@ -29,10 +29,10 @@ define( 'DB_USER', 'root' );
 define( 'DB_PASSWORD', '123456' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', '192.168.49.1' );
 
 /** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8' );
+define( 'DB_CHARSET', 'utf8mb4' );
 
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
@@ -46,14 +46,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'put your unique phrase here' );
-define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
-define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
-define( 'NONCE_KEY',        'put your unique phrase here' );
-define( 'AUTH_SALT',        'put your unique phrase here' );
-define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
-define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
-define( 'NONCE_SALT',       'put your unique phrase here' );
+define( 'AUTH_KEY',         'o^,7_6j  H`|YYG~o3]i<zhju;ZFqwkJ2tBsk&STCjZsP_!jeN)O73NMc#unz!X6' );
+define( 'SECURE_AUTH_KEY',  '8I7WF^y{44mw?O&6fQ|!@ZcSrj<>S^zFkWIUGN~eDx*rBPbxQvwUG{pB[)]^xbGS' );
+define( 'LOGGED_IN_KEY',    'CF_DQcuzNIyM2aJ&.#eRM &s;Aq`q0!e q>ZlWN}v)uh ~D|)YR_q-I~WEIYXNU~' );
+define( 'NONCE_KEY',        '%k]o]liH-Sk.=9>YY2><)sr!zlzpH=0:g{{)L?EWP%yS|D?]my+~~yn$D:EQ=>e~' );
+define( 'AUTH_SALT',        'x}!Hxq=<kwD<E;QC$Bz(/tDikb8J58iv5A(F}F{kHm1&qn]q|)T.P|G$|4JqW8B0' );
+define( 'SECURE_AUTH_SALT', 'keiTwFwbm eNZqsppo&UNW[G4s>(T7]4}f79n3LH(|L2&S1`&X+|/0?@^(vaiG48' );
+define( 'LOGGED_IN_SALT',   '6cDsQSKItF;#-qd<L,8K}DEaFzI#Xm.L;83&Y}5R3F/{5l6oRHl=p2l -h<#p2aE' );
+define( 'NONCE_SALT',       'bpZ!@Ob9Bwy88GZu/*|%4+_^Kg/][%]^iatPEp^?Y;kXz=dn(S#tig?k@l01KS56' );
 
 /**#@-*/
 
@@ -83,7 +83,7 @@ define( 'WP_DEBUG', false );
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', __DIR__ . 'wp-config.php/');
+    define( 'ABSPATH', __DIR__ . '/' );
 }
 
 /** Sets up WordPress vars and included files. */

@@ -246,8 +246,8 @@ CREATE TABLE `wp_postmeta` (
 --
 
 INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUES
-(1, 2, '_wp_page_template', 'default'),
-(2, 3, '_wp_page_template', 'default'),
+(1, 2, '_wp_page_template', 'default.conf'),
+(2, 3, '_wp_page_template', 'default.conf'),
 (3, 5, '_edit_lock', '1610222757:1');
 
 -- --------------------------------------------------------
