@@ -7,10 +7,7 @@ RUN apk add php7-soap php7-xml php7-xmlrpc php7-session php7-ctype php7-zlib php
 #telnet
 RUN apk add busybox-extras
 
-#RUN ssh-keygen -A
 RUN mkdir /run/nginx
-#COPY srcs/ssl /etc/nginx/ssl
-#COPY srcs/sshd_config /etc/ssh/sshd_config
 RUN echo -e "123456\n123456\n" | passwd
 RUN mkdir -p /var/log/supervisor
 
@@ -31,6 +28,6 @@ COPY srcs/start.sh /etc/start.sh
 
 RUN chmod +x /etc/start.sh
 EXPOSE 5050
-#ENTRYPOINT ["/usr/bin/supervisord -c /etc/supervisor/supervisord.conf"]
+
 ENTRYPOINT ["/etc/start.sh"]
-#ENTRYPOINT nginx -g 'daemon off;'
+
