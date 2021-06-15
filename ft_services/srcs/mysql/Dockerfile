@@ -7,6 +7,7 @@ RUN apk add mysql mysql-client
 
 COPY srcs/my.cnf /etc/my.cnf
 COPY srcs/localhost.sql localhost.sql
+COPY srcs/wordpress.sql wordpress.sql
 COPY srcs/start.sh start.sh
 RUN chmod +x start.sh
 
@@ -15,4 +16,6 @@ RUN mariadb-install-db -u root
 
 EXPOSE 3306
 
-CMD bash start.sh
+RUN bash start.sh
+
+CMD mysqld -u root
