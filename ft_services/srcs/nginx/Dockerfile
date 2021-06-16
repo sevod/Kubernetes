@@ -2,11 +2,12 @@ FROM	alpine:3.12
 RUN apk update
 RUN apk upgrade
 RUN apk add vim bash nginx openssl openssh supervisor
+#telnet
+RUN apk add busybox-extras
 
 RUN ssh-keygen -A
 RUN mkdir /run/nginx
-#RUN touch /run/nginx/nginx.pid
-COPY ./ssl /etc/nginx/ssl
+COPY ./srcs/ssl /etc/nginx/ssl
 COPY ./srcs/index.html /var/www/index.html
 COPY ./srcs/sshd_config /etc/ssh/sshd_config
 COPY ./srcs/default.conf /etc/nginx/conf.d
@@ -16,6 +17,4 @@ COPY ./srcs/supervisord.conf /etc/supervisor/supervisord.conf
 COPY ./srcs/start.sh /etc/start.sh
 RUN chmod +x /etc/start.sh
 EXPOSE 80 443 22
-#ENTRYPOINT ["/usr/bin/supervisord -c /etc/supervisor/supervisord.conf"]
-ENTRYPOINT ["/etc/start.sh"]
-#ENTRYPOINT nginx -g 'daemon off;'
+CMD bash /etc/start.sh
