@@ -4,6 +4,8 @@ RUN apk update
 RUN apk upgrade
 RUN apk add vim bash
 RUN apk add mysql mysql-client
+#telnet
+RUN apk add busybox-extras
 
 COPY srcs/my.cnf /etc/my.cnf
 COPY srcs/localhost.sql localhost.sql
