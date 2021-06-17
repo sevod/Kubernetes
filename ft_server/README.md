@@ -13,7 +13,7 @@ ln -s /dev/disk2s4/ ~/disk создаем хардлинк
 2. docker  run --name cont_name -itd -p 80:80 -p 443:443 image_name - запуск образа как демон с проброшенным портом 80 и нормальным именем
 
 
-sudo docker rmi $(sudo docker images -a -q) - удаление всех образов
+docker rmi $(docker images -a -q) - удаление всех образов
 
 docker rm $(docker ps -a -q) - удаление всех контейнеров
 
